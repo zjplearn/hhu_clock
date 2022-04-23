@@ -45,19 +45,19 @@ def infoInput():
         return False
 
     def show():
+        n = number.get()
+        p = password.get()
+        t = time.get()
+        s = scanFreq.get()
+        if n == "" or p == "" or t == "" or s == "":
+            showerror(title='Error', message='输入不完整！')
+            return
+        if not is_number(t) or not is_number(s) or int(t) < 0 or int(t) > 23:
+            window = tkinter.Tk()
+            window.withdraw()  # 退出默认 tk 窗口
+            showerror(title='Error', message='输入值类型或范围不正确！')
+            return
         with open('./user.txt', 'a') as f:
-            n = number.get()
-            p = password.get()
-            t = time.get()
-            s = scanFreq.get()
-            if n == "" or p == "" or t == "" or s == "":
-                showerror(title='Error', message='输入不完整！')
-                return
-            if not is_number(t) or not is_number(s) or int(t) < 0 or int(t) > 23:
-                window = tkinter.Tk()
-                window.withdraw()  # 退出默认 tk 窗口
-                showerror(title='Error', message='输入值类型或范围不正确！')
-                return
             f.write(n + '\n' + p + '\n' + t + '\n' + s)
         f.close()
         root.destroy()

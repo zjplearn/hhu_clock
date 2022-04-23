@@ -1,0 +1,1 @@
+taskkill /f /t /im "daily_report.exe"
