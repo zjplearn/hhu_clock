@@ -26,7 +26,7 @@ def infoInput():
 
     e1 = Entry(root, textvariable=number).grid(row=0, column=1, padx=10, pady=5)  # entry：输入框
     e2 = Entry(root, textvariable=password, show='*').grid(row=1, column=1, padx=10, pady=5)  # 想显示什么就show=
-    e3 = Entry(root, textvariable=time, show='8').grid(row=2, column=1, padx=10, pady=5)  # 想显示什么就show=
+    e3 = Entry(root, textvariable=time, show='').grid(row=2, column=1, padx=10, pady=5)  # 想显示什么就show=
     e4 = Entry(root, textvariable=scanFreq, show='').grid(row=3, column=1, padx=10, pady=5)  # 想显示什么就show=
 
     def is_number(s):
